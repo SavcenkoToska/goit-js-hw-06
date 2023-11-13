@@ -1,9 +1,11 @@
-const controlSize = document.querySelector("#font-size-control");
-const textSize = document.querySelector("#text");
+const inputRange = document.getElementById('font-size-control');
+const textSpan = document.getElementById('text')
 
-controlSize.addEventListener("input", onchangeText);
-
-function onchangeText(params) {
-  const fontSize = params.target.value + "px";
-  textSize.style.fontSize = fontSize;
+function changeFontSize() {
+    textSpan.style.fontSize = `${inputRange.value}px`
+    
 }
+
+
+inputRange.addEventListener('input',changeFontSize)
+

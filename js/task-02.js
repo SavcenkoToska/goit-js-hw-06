@@ -1,17 +1,31 @@
 const ingredients = [
-    "Potatoes",
-    "Mushrooms",
-    "Garlic",
-    "Tomatos",
-    "Herbs",
-    "Condiments",
-  ];
-  
-  const list = document.querySelector("#ingredients");
-  
-  const markup = ingredients
-    .map((ingredient) => `<li class="item"> ${ingredient} </li>`)
-    .join("");
-  list.insertAdjacentHTML("afterbegin", markup);
-  console.log(list);
-  
+  'Potatoes',
+  'Mushrooms',
+  'Garlic',
+  'Tomatos',
+  'Herbs',
+  'Condiments',
+];
+
+const liElements = [];
+
+
+ingredients.forEach((ingredient) => {
+  const li = document.createElement("li");
+  li.textContent = ingredient;
+  li.classList.add("item");
+  liElements.push(li);
+});
+
+
+const ulIngredients = document.getElementById("ingredients");
+
+
+ulIngredients.append(...liElements);
+
+
+
+
+
+
+
